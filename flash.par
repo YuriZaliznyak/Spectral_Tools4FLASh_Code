@@ -1,0 +1,120 @@
+# Runtime parameters for the MHD33 ZT setup ### RUN 001:: ### ./setup zt3 -3d
+##-maxblocks=512 -nxb=16 -nyb=16 -nzb=16
+
+basenm = "zt3_mhd33_"
+run_comment = "MHD33"
+
+#Restart_HDF_File_Num = 1
+#Forcing_WCM = 1
+
+# Refinement levels
+nrefs=-773
+lrefine_max     = 2
+lrefine_min     = 2
+
+# Restart - if needed
+#cpnumber        = 11
+#ptnumber        = 11
+#restart         = .TRUE.
+restart         =  .FALSE.
+
+# Timesteps
+dtini	=          1.0e-4
+dtmin	=          1.0e-6
+dtmax	=          5.0e-1
+
+# Output
+tplot           = 25000.0
+trstrt          = 10000.0
+nend            = 250
+tmax            = 1500.0
+# Plot variables
+plot_var_1      = "velx"
+plot_var_2      = "dens"
+plot_var_3      = "temp"
+#plot_var_3      = "resp"
+#plot_var_4      = "imsp"
+
+# Size of the computational domain
+xmin            =  0.0
+xmax            =  6.2831855
+ymin            =  0.0
+ymax            =  6.2831855
+zmin            =  0.0
+zmax            =  6.2831855
+
+# Boundary conditions
+xl_boundary_type = "periodic"
+xr_boundary_type = "periodic"
+yl_boundary_type = "periodic"
+yr_boundary_type = "periodic"
+zl_boundary_type = "periodic"
+zr_boundary_type = "periodic"
+
+
+rho_ambient	= 1.
+p_ambient       = 1.0e-1
+#t_ambient       = 1.
+Bx0             = 1e-3
+By0             = 1e-3
+Bz0             = 1e-3
+Vx0             = 1e-5
+Vy0             = 1e-5
+Vz0             = 1e-5
+
+iSpectrSave     = 1
+
+##gamma           = 1.66666666666
+gamma           = 1.001
+cfl             = 0.6
+
+unitsystem      = "none"
+resistive_mhd	= .TRUE.
+killdivb        = .TRUE.
+
+resistivity   =  5.e-4
+##mvisc = 5e-4
+
+diff_visc_nu  =  5e-4
+conductivity_constant = 0.0
+
+#diffuse_therm = .TRUE.
+#diff_constant = 0.97e-10
+
+#itemp_limit = 1
+#temp_factor = 5e-1
+
+# Grid geometry
+geometry	= "cartesian"
+
+# Number of low-lewel blocks
+### 128^3, 4 blocks, 2 levels
+nblockx         = 2
+nblocky         = 2
+nblockz         = 2
+
+memory_stat_freq = 1500
+###eint_switch = 1e-3
+
+# Stirring parameters
+ istir           = 0
+# st_seed         = 12
+
+Forcing_Energy_CURR = 1.0   # Default value for the forcing energy
+Forcing_Energy_MIN = 0.0005    # Default min forcing energy
+Forcing_Energy_MAX = 1.0     # Default max forcing energy
+MachMIN            = 6.9     # Default value for the min Mach number
+MachMAX            = 7.1     # Default value for the max Mach number
+MachUNDERMIN       = 6.5     # Default value for the undermin Mach number
+MachOVERMAX        = 7.5     # Default value for the overmax Mach number
+
+ st_energy       = 1.0       # Kinetic energy input by stirring per unit time
+ st_decay        = 15.0      # Number of modes for stirring
+ st_stirmin      = -2.       # Minimum "stirred" wavenumber
+ st_stirmax      = 2.        # Maximum ...
+#################################################################
+## Stir1  =  250.0          # Incompressible forcing energy
+## Stir2  =  100.0          # Compressible forcing energy
+#################################################################
+
+gconst = 0.0
