@@ -3,7 +3,7 @@ by Yuri Zaliznyak for FLASH hydro/mhd code developed in the University if Chicag
 (for details and current state of the code see webpage http://flash.uchicago.edu/site/flashcode/).
 
 All routines are in fortran90 and use MPI approach for parallel computations. Implemented, 
-tested and employed for production runs with FLASH core version 2.4 on IBM p390 mainframe machine 
+tested and employed for production runs with FLASH core version 2.4 on IBM System P mainframe machine 
 at Garching bei Munchen supercomputer centre in 2003-2005. Successfully scaled up to 512 cpus.
 
 Main routine is Calc_Usr_Spectrum_Universal.F90. It contains spectral transformator, which first aggregate 
